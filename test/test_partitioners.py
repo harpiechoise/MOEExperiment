@@ -92,11 +92,11 @@ def test_partition_by_class(X, y):
         break
 
 def test_get_dataset(X, y):
-    X_train, y_train = DatasetPartitioner.get_dataset(X, y)
+    X_train, y_train = DatasetPartitioner.get_dataset_partitioned(X, y)
     assert (X_train == [[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]).all()
     assert (y_train == [[1], [2], [3]]).all()
 
 def test_get_dataset_shape(X, y):
-    X_train, y_train = DatasetPartitioner.get_dataset(X, y)
+    X_train, y_train = DatasetPartitioner.get_dataset_partitioned(X, y)
     assert X_train.shape[0] == 3
     assert y_train.shape[0] == 3
